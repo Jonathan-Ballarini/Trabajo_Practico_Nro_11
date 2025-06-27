@@ -40,7 +40,12 @@ function Home() {
             <input
                 type="text"
                 value={nombre}
-                onChange={(e) => setNombre(e.target.value)}
+                onChange={(e) => {
+                const valor = e.target.value;
+                if (/^[a-zA-Z\s]*$/.test(valor)) {
+                setNombre(valor);
+                }
+            }}
             />
             </div>
 
